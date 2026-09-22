@@ -82,7 +82,7 @@
 
 /* Graphite stock and softly printed book typography. Grain stays still. */
 .direction-whiteprint-dark{--reading:'Cormorant Garamond',Georgia,serif;--paper-grain-strength:.42}
-.direction-whiteprint-dark:after{content:'';position:fixed;inset:0;z-index:80;pointer-events:none;background:url('assets/graphite-paper-grain.svg') repeat;background-size:240px 240px;opacity:var(--paper-grain-strength);mix-blend-mode:soft-light}
+.direction-whiteprint-dark:after{content:'';position:fixed;inset:0;z-index:80;pointer-events:none;background:url('assets/graphite-paper-grain.svg') repeat;background-size:180px 180px;opacity:var(--paper-grain-strength);mix-blend-mode:soft-light}
 .direction-whiteprint-dark .specimen{background-image:linear-gradient(100deg,#00000013,transparent 14%,#ffffff04 54%,transparent 89%,#00000009)}
 .direction-whiteprint-dark .hero-wording h1{font-family:var(--reading);font-size:clamp(52px,5.35vw,80px);font-weight:500;line-height:1.1;letter-spacing:.018em;text-transform:uppercase;text-shadow:0 .6px 0 #00000070;margin-bottom:29px}
 .direction-whiteprint-dark .hero-wording h1 span{color:#c9cbc5}

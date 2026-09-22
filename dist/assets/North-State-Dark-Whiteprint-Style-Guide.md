@@ -37,7 +37,7 @@ On phones, retain copy-first reading order and place the technical drawing benea
 
 ## Paper and print
 
-Use `graphite-paper-grain.svg` as a 240 px repeated tile. The live page uses a stationary overlay with `mix-blend-mode: soft-light` and `--paper-grain-strength: .42`. Keep grain fine enough to suggest stock without breaking small letterforms. The overlay ignores pointer input. A very shallow light gradient creates paper depth, and a subtle dark offset gives large letters a printed edge. No animated noise or blurred copy.
+Use `graphite-paper-grain.svg` as a 180 px repeated tile (25% finer than the original 240 px treatment). The live page uses a stationary overlay with `mix-blend-mode: soft-light` and `--paper-grain-strength: .42`. Keep grain fine enough to suggest stock without breaking small letterforms. The overlay ignores pointer input. A very shallow light gradient creates paper depth, and a subtle dark offset gives large letters a printed edge. No animated noise or blurred copy.
 
 ## SVG and motion
 
