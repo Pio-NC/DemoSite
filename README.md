@@ -59,3 +59,13 @@ The complete written guide is `dist/assets/North-State-Blueprint-Style-Guide.md`
 ## Dark Whiteprint
 
 Open `dist/blueprint.html#whiteprint-dark` for the dark paper treatment. The Whiteprint comparison controls switch between light and dark. The dark treatment uses dedicated editable SVG variants and has its own downloadable style sheet: `dist/assets/North-State-Dark-Whiteprint-Style-Guide.md`. Main paper is #23262A with #DEDCD3 silver-white type and #B4B7B4 supporting text. Cormorant Garamond carries the main reading copy; IBM Plex Mono carries technical annotations. A lightweight SVG grain layer suggests matte book paper. The existing three directions remain available.
+
+## Four-page graphite concept
+
+The root is now the parent North State landing page, with illustrated islands linking to Manufacturing (machining/fabrication), Powder Coating, and Academy (powder coating education). The original ten concepts remain in `dist/concepts.html`; legacy root `#/concept/...` URLs redirect there. The graphite blueprint studies remain at `dist/blueprint.html`.
+
+Regenerate the four new static pages with `python build-pages.py`. Shared presentation and behavior are in `dist/northstate.css` and `dist/northstate.js`. The full designer handoff is `dist/assets/North-State-Graphite-Site-Guide.md`.
+
+Academy includes three fictional sample articles, an interactive slider initialized at 52%, and a live countdown to the explicitly labeled demo target January 1, 2027 at midnight Eastern. No confirmed enrollment or curriculum is represented.
+
+New SVG drawings use elevated isometric projection and include interactive semantic part groups. All three are conceptual illustrations, not actual facility or equipment plans. Desktop and phone routes, illustration selection, slider/reset, countdown, journal dialog/focus return, and mobile navigation were checked in the browser. No horizontal page overflow or browser console errors were observed in those checks.
