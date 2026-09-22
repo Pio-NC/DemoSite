@@ -55,3 +55,7 @@ Open `dist/blueprint.html` for the new Whiteprint, Assembly, and Drawing Office 
 
 The complete written guide is `dist/assets/North-State-Blueprint-Style-Guide.md`. Three editable technical-diagram SVGs are included in `dist/assets`. These are conceptual drawings, not depictions of verified North State equipment. See the written guide for fonts, palettes, stroke weights, spacing, responsive behavior and motion recommendations.
 
+
+## Dark Whiteprint
+
+Open `dist/blueprint.html#whiteprint-dark` for the dark paper treatment. The Whiteprint comparison controls switch between light and dark. The dark treatment uses dedicated editable SVG variants and has its own downloadable style sheet: `dist/assets/North-State-Dark-Whiteprint-Style-Guide.md`. Main paper is #23262A with #DEDCD3 silver-white type and #B4B7B4 supporting text. Cormorant Garamond carries the main reading copy; IBM Plex Mono carries technical annotations. A lightweight SVG grain layer suggests matte book paper. The existing three directions remain available.

@@ -100,3 +100,7 @@ Contact: Jesse@northstatepc.com · (919) 801-2079 · 1305 Graham St, Burlington,
 ## Files and handoff
 
 `blueprint.html`, `blueprint.css`, and `blueprint.js` contain the working guide. The original ten concepts remain in `index.html`. The site is plain HTML/CSS/JavaScript and needs no build or installation. Extract the ZIP and open `blueprint.html`. Google Fonts need an internet connection; system mono fallbacks are provided.
+
+## Whiteprint — dark paper variant
+
+A dark version is available at `blueprint.html#whiteprint-dark`. Use the Light paper / Dark paper controls to compare. See `North-State-Dark-Whiteprint-Style-Guide.md` for the charcoal palette, mono typography, dedicated SVG assets, and motion details.
