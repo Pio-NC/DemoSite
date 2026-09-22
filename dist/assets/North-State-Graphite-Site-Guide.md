@@ -52,10 +52,6 @@ General powder-coating process and proposed educational topics are informed by t
 
 `northstate.css` contains the shared design. `northstate.js` controls the logo, connectors, detail highlights, progress slider, countdown, mobile navigation, and journal dialogs. `build-pages.py` regenerates the four static HTML files using the SVG assets and editable copy. The deployed site needs no runtime backend or build step. Contact links open the visitor’s email or telephone application; they do not simulate submissions.
 
-## Paper-scroll page transitions
+## Page navigation
 
-Navigation between the four graphite pages rolls the visible sheet upward into a horizontal graphite scroll (720 ms), then unrolls the destination downward (850 ms). A curved, textured face, spiral paper edges, and a compressed impression of the current page carry the printed-paper effect. This also works from the lower landing-page islands.
-
-The transition preserves normal external links, contact links, same-page anchors, and modified/new-tab clicks. Browser Back restores a usable sheet. Escape can cancel the outgoing roll. Reduced-motion preferences use immediate navigation. A short-lived, destination-specific session value carries the animation between documents; storage is optional and visibility has a safety reset.
-
-Implementation: `paper-scroll-boot.js` handles the initial destination paint; `paper-scroll.js` coordinates navigation, clipping, and the paper curl; `paper-scroll.css` supplies the material. `build-pages.py` includes the shared sheet wrapper and scripts on each page.
+Links between the four graphite pages use normal browser navigation. The page-scroll transition has been removed; the logo movement, drawing connectors, content reveals, and illustration hover effects remain.
