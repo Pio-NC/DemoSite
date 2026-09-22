@@ -5,10 +5,13 @@
   if (!sheet) {root.classList.remove('paper-entering');return;}
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const canonical = path => path.replace(/\/+$/, '').replace(/\/index(?:\.html)?$/, '').replace(/\.html$/, '') || '/';
-  const allowed = new Set(['/','/manufacturing','/powder-coating','/academy']);
+  // Resolve beside this script so previews and GitHub subfolders behave like the live root.
+  const base = new URL('.', document.currentScript?.src || document.baseURI);
+  const allowed = new Set(['index.html','manufacturing.html','powder-coating.html','academy.html']
+    .map(page => canonical(new URL(page, base).pathname)));
   const key = 'northstate-paper-scroll';
   let busy=false, stage=null, roller=null, imprint=null, animation=0, destination=null, watchdog=0;
-  let offset=0, height=0, direction=null, committed=false;
+  let offset=0, width=0, height=0, direction=null, committed=false;
 
   function clean() {
     cancelAnimationFrame(animation);
@@ -37,6 +40,7 @@
   function start(mode) {
     busy=true; direction=mode;
     offset=scrollY;
+    width=innerWidth;
     height=innerHeight;
     // The copy supplies a compressed impression of the actual print on the curl.
     const copy=sheet.cloneNode(true);
@@ -119,7 +123,8 @@
     if(busy&&event.key==='Escape'&&direction==='out'&&!committed)clean();
   });
   addEventListener('resize',() => {
-    if(!busy)return;
+    // Some preview browsers emit a load-time resize with unchanged dimensions.
+    if(!busy||(innerWidth===width&&innerHeight===height))return;
     if(direction==='out'&&destination)navigate();else clean();
   });
   reduced.addEventListener('change',() => {

@@ -72,4 +72,8 @@ New SVG drawings use elevated isometric projection and include interactive seman
 
 ## Roll-up / unroll navigation
 
-The four graphite pages now share a paper-scroll transition. See `dist/paper-scroll.js`, `dist/paper-scroll-boot.js`, and `dist/paper-scroll.css`. The generator includes these automatically. Browser checks covered desktop and mobile transitions, entry from a lower island, restored Back navigation, outgoing Escape cancellation, and normal final interaction state. Focused bootstrap checks cover canonical routes, expired/mismatched intents, history traversal, reduced motion, unavailable storage, and the visibility timeout.
+The four graphite pages now share a paper-scroll transition. Click a division link or the North State home link to roll up the current page and unroll the destination. Ordinary scrolling, same-page section links, and the archived studies do not trigger this transition. Reduced-motion preferences skip it.
+
+See `dist/paper-scroll.js`, `dist/paper-scroll-boot.js`, and `dist/paper-scroll.css`. The generator includes these automatically. Routes resolve relative to the script directory, including local previews at `/dist/` and repository subfolders. For reliable roll-up and unroll behavior, use the local server command above; direct file opening has browser-dependent session-storage support. Browser checks covered desktop and mobile transitions, entry from a lower island, restored Back navigation, outgoing Escape cancellation, and normal final interaction state. Focused bootstrap checks cover canonical routes, expired/mismatched intents, history traversal, reduced motion, unavailable storage, and the visibility timeout.
+
+Local-preview regression checks cover nested-folder navigation and both visible halves of the transition. A load-time resize event with unchanged viewport dimensions no longer cancels the incoming unroll; actual viewport size changes still end the transition safely.
