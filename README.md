@@ -48,3 +48,10 @@ The supplied `NORTHSTATE Logo-02.svg` is an Academy badge; the supplied JPG file
 ## Verification
 
 JavaScript syntax checked. All ten routes checked at desktop and phone width for content, images, connector generation and horizontal overflow. Desktop heading overflow checks passed. Follow-the-line, ink selection, replay, and collection navigation exercised in the browser. No browser console warnings or errors were found during those checks.
+
+## Blueprint refinement — three designer studies
+
+Open `dist/blueprint.html` for the new Whiteprint, Assembly, and Drawing Office directions. These combine monochrome technical drawings with monospaced typography and a dedicated designer-notes section. The original ten concepts remain available.
+
+The complete written guide is `dist/assets/North-State-Blueprint-Style-Guide.md`. Three editable technical-diagram SVGs are included in `dist/assets`. These are conceptual drawings, not depictions of verified North State equipment. See the written guide for fonts, palettes, stroke weights, spacing, responsive behavior and motion recommendations.
+

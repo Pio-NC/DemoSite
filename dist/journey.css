@@ -33,3 +33,5 @@
 .theme-blueprint .traveling-logo img{content:url("assets/northstate-logo-blueprint.svg");filter:none}
 .theme-carbon .traveling-logo img{content:url("assets/northstate-logo-carbon.svg");filter:none}
 
+
+.blueprint-refinement-link{position:fixed;bottom:91px;left:50%;transform:translateX(-50%);background:var(--paper);border:1px solid var(--ink);padding:12px 18px;z-index:40;font-family:monospace;font-size:12px;text-decoration:none;white-space:nowrap}@media(max-width:700px){.blueprint-refinement-link{font-size:10px;padding:11px 12px;bottom:77px}}

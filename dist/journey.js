@@ -21,7 +21,7 @@ window.renderConcept=function(c,index){
  const copy=sectionCopy[c.id],contactTitle=c.id==='carbon'?'LET’S MAKE\nSOMETHING LAST.':c.id==='line'?'Your next\nchapter.':'Every good finish\nstarts with a conversation.';
  const warm=c.id==='blueprint'?'#eed79b':c.id==='carbon'?'#c8df9e':'#b54f36';
  app.innerHTML=`<svg class="svg-defs" aria-hidden="true"><defs><filter id="ink-wobble"><feTurbulence type="fractalNoise" baseFrequency=".025" numOctaves="2" seed="7" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.6" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
- <header class="journey-header"><a class="back-link" href="#/">← <span>All concepts</span></a><span class="journey-edition mono">${String(index+1).padStart(2,'0')} / ${c.name}</span></header>
+ ${c.id === 'blueprint' ? '<a class="blueprint-refinement-link" href="blueprint.html">Explore 3 monochrome blueprint studies ↗</a>' : ''}<header class="journey-header"><a class="back-link" href="#/">← <span>All concepts</span></a><span class="journey-edition mono">${String(index+1).padStart(2,'0')} / ${c.name}</span></header>
  <a class="traveling-logo" href="#/" aria-label="North State — back to concept collection"><img src="assets/northstate-logo.svg" alt="North State Powder Coating"></a>
  <main class="journey" id="main"><svg class="ink-route" aria-hidden="true"></svg>
  <section class="journey-hero"><div class="hero-kicker mono">Powder coating · Burlington, NC</div><h1>${c.title.replace('\n','<br>')}</h1><p class="hero-description">A fresh perspective on metal.<br>Professional powder coating, with local care.</p><button class="follow-button" data-scroll="services">Follow the line <span aria-hidden="true">↓</span></button><span class="margin-note note-left">a little care<br>goes a long way ${arrow}</span><span class="margin-note note-right">made for<br>what’s next ${arrow}</span><span class="hero-folio mono">${c.id==='blueprint'?'FIG. 01 / THE STARTING POINT':'The story starts here'}</span><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 380 280">${ornament(c.id)}</svg></div></section>
@@ -61,3 +61,4 @@ function initDrawing(id){
  const observer=new ResizeObserver(()=>measure());observer.observe(journey);window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',measure);reduced.addEventListener('change',schedule);measure();document.fonts.ready.then(()=>{if(!disposed)measure()});
  window.cleanupConcept=()=>{disposed=true;cancelAnimationFrame(frame);observer.disconnect();window.removeEventListener('scroll',schedule);window.removeEventListener('resize',measure);reduced.removeEventListener('change',schedule);window.cleanupConcept=null;};
 }
+

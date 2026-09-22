@@ -20,3 +20,5 @@ body:after{content:'';pointer-events:none;position:fixed;inset:0;z-index:100;opa
 .theme-blueprint .preview-logo{content:url("assets/northstate-logo-blueprint.svg");filter:none}
 .theme-carbon .preview-logo{content:url("assets/northstate-logo-carbon.svg");filter:none}
 
+
+.blueprint-series-link{display:flex;justify-content:space-between;align-items:center;gap:20px;border:1px solid #16394b35;padding:22px 25px;margin:0 0 35px;text-decoration:none;background:#ffffff88}.blueprint-series-link span{font-family:monospace;font-size:11px;letter-spacing:1px}.blueprint-series-link strong{font-size:14px;font-weight:400}.blueprint-series-link:hover{background:#fff}@media(max-width:700px){.blueprint-series-link{display:block;line-height:1.8;padding:18px}.blueprint-series-link strong{display:block;margin-top:7px}}
