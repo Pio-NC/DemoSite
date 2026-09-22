@@ -69,3 +69,7 @@ Regenerate the four new static pages with `python build-pages.py`. Shared presen
 Academy includes three fictional sample articles, an interactive slider initialized at 52%, and a live countdown to the explicitly labeled demo target January 1, 2027 at midnight Eastern. No confirmed enrollment or curriculum is represented.
 
 New SVG drawings use elevated isometric projection and include interactive semantic part groups. All three are conceptual illustrations, not actual facility or equipment plans. Desktop and phone routes, illustration selection, slider/reset, countdown, journal dialog/focus return, and mobile navigation were checked in the browser. No horizontal page overflow or browser console errors were observed in those checks.
+
+## Roll-up / unroll navigation
+
+The four graphite pages now share a paper-scroll transition. See `dist/paper-scroll.js`, `dist/paper-scroll-boot.js`, and `dist/paper-scroll.css`. The generator includes these automatically. Browser checks covered desktop and mobile transitions, entry from a lower island, restored Back navigation, outgoing Escape cancellation, and normal final interaction state. Focused bootstrap checks cover canonical routes, expired/mismatched intents, history traversal, reduced motion, unavailable storage, and the visibility timeout.

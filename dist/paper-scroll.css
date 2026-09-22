@@ -1,0 +1,24 @@
+/* A real document stays flat; only its visible paper edge curls into the roll. */
+.page-sheet{position:relative;isolation:isolate;background:var(--paper);min-height:100vh}
+html.paper-entering,html.paper-active{background:#101216}
+.paper-entering body,.paper-active body{background:#101216}
+.paper-entering .page-sheet{clip-path:inset(0 0 100% 0)}
+.paper-active body:after,.paper-entering body:after{opacity:0}
+.paper-active .page-sheet:after{content:'';position:fixed;inset:0;z-index:100;pointer-events:none;background:url('assets/graphite-paper-grain.svg') repeat;background-size:180px 180px;opacity:.42;mix-blend-mode:soft-light}
+.paper-active .page-sheet{pointer-events:none;will-change:clip-path}
+.paper-entering .reveal,.paper-unrolling .reveal{opacity:1!important;transform:none!important}
+.paper-scroll-stage{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:210;isolation:isolate}
+.paper-scroll-stage:before{content:'';position:absolute;inset:0;box-shadow:inset 0 0 100px #0003;pointer-events:none}
+.paper-roller{position:absolute;top:20px;left:0;right:0;height:96px;will-change:transform,height;filter:drop-shadow(0 18px 17px #0009)}
+.paper-roller-face{position:absolute;inset:0 23px;overflow:hidden;border-radius:5px;border-top:1px solid #9ca5ac55;border-bottom:1px solid #07090cb3;background:linear-gradient(180deg,#1b2025 0%,#393f46 11%,#4b525a 30%,#3a4148 47%,#282e34 71%,#101419 96%,#191e23 100%);box-shadow:inset 0 2px 2px #c6cedb0e,inset 0 -7px 15px #0008}
+.paper-roller-face:after{content:'';position:absolute;inset:0;z-index:2;background:url('assets/graphite-paper-grain.svg') repeat;background-size:180px 180px;background-position:0 var(--roll-grain,0px);mix-blend-mode:soft-light;opacity:.55}
+.paper-imprint{position:absolute;inset:0;overflow:hidden;opacity:.28;mix-blend-mode:screen;mask-image:linear-gradient(transparent 3%,#000 24%,#000 50%,transparent 85%);pointer-events:none}
+.paper-imprint-sheet{position:absolute;left:-23px;transform:scaleY(.44);transform-origin:top left}
+.paper-imprint-sheet.page-sheet{background:transparent;min-height:0;isolation:auto;pointer-events:none;clip-path:none!important}
+.paper-imprint-sheet .brand{display:none}.paper-imprint-sheet .site-nav{visibility:hidden}.paper-imprint-sheet .reveal{opacity:1!important;transform:none!important}.paper-imprint-sheet .page-sheet:after,.paper-imprint-sheet:after{display:none!important}
+.paper-roll-end{position:absolute;top:0;height:100%;width:44px;overflow:visible}
+.paper-roll-end:first-of-type{left:2px}.paper-roll-end:last-of-type{right:2px}
+.paper-roller-edge{position:absolute;left:22px;right:22px;top:20%;height:1px;background:linear-gradient(90deg,transparent,#bcc4ca38 18%,#c8d0d533 80%,transparent);pointer-events:none}
+@media(max-width:760px){.paper-roll-end{width:29px}.paper-roller-face{left:15px;right:15px}.paper-imprint-sheet{left:-15px}.paper-roller-edge{left:15px;right:15px}.paper-roller{filter:drop-shadow(0 12px 11px #0009)}}
+@media(prefers-reduced-motion:reduce){.paper-entering .page-sheet{clip-path:none}.paper-scroll-stage{display:none}}
+@media print{.paper-scroll-stage{display:none}.page-sheet{clip-path:none!important}}

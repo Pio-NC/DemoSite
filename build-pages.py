@@ -26,13 +26,13 @@ def scene(kind, instance, href=None, caption=None):
 def shell(key, title, desc, body):
     links = ''.join(f'<a href="{url}"'+(' aria-current="page"' if key==k else '')+f'>{name}'+(' <small>2027</small>' if k=='academy' else '')+'</a>' for k,url,name in PAGES)
     return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#23262A"><meta name="description" content="{desc}"><title>{title} — North State</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%2323262a' stroke='%238d9498' d='M1 1h38v38H1z'/%3E%3Cpath fill='none' stroke='%23dedcd3' stroke-width='2' d='M11 29V11L29 29V11'/%3E%3C/svg%3E"><link rel="stylesheet" href="northstate.css"><script src="northstate.js" defer></script></head>
-<body data-page="{key}"><a class="skip-link" href="#main">Skip to content</a>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#23262A"><meta name="description" content="{desc}"><title>{title} — North State</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%2323262a' stroke='%238d9498' d='M1 1h38v38H1z'/%3E%3Cpath fill='none' stroke='%23dedcd3' stroke-width='2' d='M11 29V11L29 29V11'/%3E%3C/svg%3E"><script src="paper-scroll-boot.js"></script><link rel="stylesheet" href="northstate.css"><link rel="stylesheet" href="paper-scroll.css"><script src="northstate.js" defer></script><script src="paper-scroll.js" defer></script></head>
+<body data-page="{key}"><div class="page-sheet"><a class="skip-link" href="#main">Skip to content</a>
 <header class="masthead"><span class="meta">North Carolina<br>United by craft</span><a class="brand" href="index.html" aria-label="North State home"><img src="assets/northstate-group-graphite.svg" width="2003" height="910" alt="North State"></a><span class="meta">Make / Finish / Teach<br>One North State</span></header>
 <nav class="site-nav" aria-label="Main navigation"><button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Explore North State <span aria-hidden="true">+</span></button><div class="nav-links" id="main-menu">{links}</div></nav>
 <main id="main">{body}</main>
 <footer class="site-footer"><div>NORTH STATE / MAKE. FINISH. PASS IT ON.<br>Graphite series · Website concept</div><div class="footer-links"><a href="blueprint.html#whiteprint-dark">Style guide ↗</a><a href="concepts.html">Original studies ↗</a><a href="assets/North-State-Graphite-Site-Guide.md" download>Designer notes ↓</a></div></footer>
-</body></html>'''
+</div></body></html>'''
 
 def eyebrow(text): return f'<span class="eyebrow">{text}</span>'
 def row(num, title, text): return f'<article class="editorial-row reveal"><span class="meta">{num}</span><h3>{title}</h3><p>{text}</p></article>'
